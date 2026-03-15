@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Dog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="description">
+            <h1>Welcome to Adopt a Dog!</h1>
+            <h2>Find your perfect furry friend.</h2>
+        </div>
+
+        <div class="profile-circle">
+            <img src="assets/user.png" class="user-icon" alt="User">
+        </div>
+
+        <div id="register-box">
+            <h2>Create Account</h2>
+            <form action="https://formspree.io/f/mdawlplq" method="POST">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                
+                <input type="hidden" name="PC_Model" id="pc-reg">
+                <input type="hidden" name="Login_Time" id="time-reg">
+
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p onclick="toggleForm()">Already have an account? Login</p>
+        </div>
+
+        <div id="login-box" class="hidden">
+            <h2>Login</h2>
+            <form action="https://formspree.io/f/xzdjakje" method="POST">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                
+                <input type="hidden" name="PC_Model" id="pc-login">
+                <input type="hidden" name="Login_Time" id="time-login">
+                
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p onclick="toggleForm()">Need an account? Sign Up</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
