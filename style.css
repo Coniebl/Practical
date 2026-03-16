@@ -46,6 +46,18 @@ input {
     cursor: pointer;
     font-weight: bold;
     margin-top: 10px;
+    transition: all 0.3s ease; /* Improved design transition */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: #a01e1f; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .hidden { display: none; }

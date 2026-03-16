@@ -12,3 +12,23 @@ function toggleForm() {
     regBox.classList.toggle('hidden');
     loginBox.classList.toggle('hidden');
 }
+
+// Handle Registration Submission
+document.getElementById('regForm').addEventListener('submit', function(event) {
+    // Prevent the page from reloading immediately (which causes the white screen)
+    event.preventDefault();
+    
+    // Simulate form submission delay then switch to login
+    setTimeout(() => {
+        toggleForm();
+        alert("Registration submitted! Please login.");
+    }, 500);
+});
+
+// Handle Login Submission and Notification
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const status = document.getElementById('status-message');
+    // Display the specific requested message
+    status.innerText = "login ad email notification sent";
+});
