@@ -1,72 +1,199 @@
+:root {
+  --bg-color: #080808;
+  --card-bg: #151520;
+  --input-bg: #121212;
+  --text-main: #ffffff;
+  --text-dim: #888888;
+  --accent-gradient: linear-gradient(135deg, #46d023, #3ad7da);
+  --border-color: rgb(80, 77, 77);
+}
+
 body {
-    margin: 0;
-    height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card{
+  background-color: #061E29;
+  border: solid 1px var(--border-color);
+  width: 100%;
+  max-width: 450px;
+}
+.login-card {
+  background-color: var(--card-bg);
+  padding: 50px 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+logo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: 40px; 
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(7, 219, 78, 0.827));
+}
+
+h1 { font-size: 26px; margin: 0 0 10px 0; font-weight: 600; }
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4ade80;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5; 
+  transition: opacity 0.2s ease;
+}
+
+#eyeIcon {
+  filter: invert(1);
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+.toggle-password img {
+  width: 20px;
+  height: auto;
+  display: block;
+}
+
+input[type="password"], 
+input[type="text"] {
+  padding-right: 45px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px 0 30px 0;
+  color: var(--text-dim);
+}
+
+.checkbox-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, #c02425, #f0cb35);
-    font-family: sans-serif;
-}
-
-.container {
-    text-align: center;
-    width: 350px;
-    color: white;
-}
-
-.description h1 { font-size: 24px; margin-bottom: 5px; }
-.description h2 { font-size: 16px; margin-bottom: 20px; font-weight: normal; }
-
-.profile-circle {
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-}
-
-.user-icon {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
-
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.btn {
-    background: #c02425;
-    color: white;
-    border: none;
-    padding: 12px 50px;
-    border-radius: 25px;
+    gap: 5px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    position: relative;
+    appearance: none;
 }
 
-.btn:hover {
-    background: #a01e1f; 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+.forgot-link { 
+  color: var(--text-dim); 
+  text-decoration: none; 
 }
 
-.btn:active {
-    transform: translateY(0);
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-gradient);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s;
 }
 
-.hidden { display: none; }
-p { cursor: pointer; text-decoration: underline; margin-top: 15px; }
+.btn-primary:hover { opacity: 0.9; }
+
+.divider {
+  margin: 25px 0;
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-social {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-social img { width: 18px; }
+.apple-icon { filter: invert(1); }
+
+.signup-text { font-size: 13px; margin-top: 25px; color: var(--text-dim); }
+
+.signup-text a {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+}
